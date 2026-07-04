@@ -1,5 +1,5 @@
 version = 1
-revision = 2
+revision = 3
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version == '3.13.*'",
@@ -2518,7 +2518,7 @@ test-py311-or-lower = [
     { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version < '3.14'" },
 ]
 test-py312-or-higher = [
-    { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version < '3.14'" },
+    { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version >= '3.12' and python_full_version < '3.14'" },
 ]
 
 [package.metadata]
@@ -2620,8 +2620,8 @@ requires-dist = [
     { name = "tree-sitter-cpp", marker = "extra == 'ifevalcode'" },
     { name = "types-beautifulsoup4", marker = "extra == 'mind2web'" },
     { name = "types-docker", marker = "extra == 'swe-lancer'" },
-    { name = "vimgolf", marker = "extra == 'vimgolf'", specifier = "==0.5.1" },
-    { name = "vimgolf", marker = "extra == 'vimgolf-challenges'", specifier = "==0.5.1" },
+    { name = "vimgolf", marker = "extra == 'vimgolf'", specifier = "==0.5.4" },
+    { name = "vimgolf", marker = "extra == 'vimgolf-challenges'", specifier = "==0.5.4" },
 ]
 provides-extras = ["register-tooling", "b3", "agentdojo", "bfcl", "swe-bench", "swe-lancer", "math", "worldsense", "mind2web", "sevenllm", "scicode", "ifeval", "anima", "medqa", "niah", "core-bench", "healthbench", "personality", "sciknoweval", "gdm-stealth", "cybench", "cybergym", "makemesay", "gaia", "osworld", "cti-realm", "vimgolf", "vimgolf-challenges", "ifevalcode", "gdpval", "agentic-misalignment", "cje", "theagentcompany", "gdm-capabilities", "gdm-self-proliferation", "scbench", "paperbench", "cyberseceval-4"]
 
@@ -2674,7 +2674,7 @@ test = [
     { name = "pytest-xdist" },
 ]
 test-py311-or-lower = [{ name = "inspect-evals", extras = ["theagentcompany"] }]
-test-py312-or-higher = [{ name = "inspect-evals", extras = ["theagentcompany"] }]
+test-py312-or-higher = [{ name = "inspect-evals", extras = ["theagentcompany"], marker = "python_full_version >= '3.12'" }]
 
 [[package]]
 name = "inspect-scout"
@@ -8094,11 +8094,11 @@ wheels = [
 
 [[package]]
 name = "vimgolf"
-version = "0.5.1"
+version = "0.5.4"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/af/80/dbffc921c18897d60fb50dd17144a3ffaaa9073b35d08210b5b98dd734ae/vimgolf-0.5.1.tar.gz", hash = "sha256:8e41abf7a694ed520958bb12d99b78652babeda34290e17492307fb6410b3f65", size = 20619, upload-time = "2023-10-07T01:47:51.025Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/87/17/aaacfb9ead19b6114034ffe779fa2c5b3271e59422274f09a06a9624442e/vimgolf-0.5.4.tar.gz", hash = "sha256:13b0854a30218c837beb82f025abc550d64176d90223a1ea0c7aa29b708f612d", size = 20862, upload-time = "2026-05-29T04:28:10.69Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2e/8a/2df1442d0566ebfdc1b45d3d268e161bf3c9a2e10481f70a14fdbd17e216/vimgolf-0.5.1-py3-none-any.whl", hash = "sha256:9dc2aeca4d424e5185ef3e6cb79524abbabad6ba8d8dc7fa777a88cf1b7c44d6", size = 18616, upload-time = "2023-10-07T01:47:49.509Z" },
+    { url = "https://files.pythonhosted.org/packages/1b/7f/3ed315cb631e52dc525ba2270c452e140a7593477f486ebe3d167daa3974/vimgolf-0.5.4-py3-none-any.whl", hash = "sha256:a03639771d423b694dac1ebc5b18f5d716faace7164efb75758d6cc9a4d2f08a", size = 18823, upload-time = "2026-05-29T04:28:09.51Z" },
 ]
 
 [[package]]
