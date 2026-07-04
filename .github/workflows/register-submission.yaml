@@ -50,7 +50,7 @@ jobs:
       # what the workflow executes. It lives under $RUNNER_TEMP (outside
       # $GITHUB_WORKSPACE) so the later PR-head checkout cannot delete it.
       - name: Checkout workflow scripts (trusted)
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           path: _trusted_tmp
           sparse-checkout: .github/scripts
@@ -107,7 +107,7 @@ jobs:
 
       - name: Checkout
         if: steps.gate.outputs.proceed == 'true'
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ format('refs/pull/{0}/head', steps.trigger.outputs.pr_number) }}
           fetch-depth: 0
@@ -212,7 +212,7 @@ jobs:
       # what gets installed at this point.
       - name: Setup Python
         if: steps.gate.outputs.proceed == 'true' && steps.scope.outputs.skip != 'true'
-        uses: actions/setup-python@a309ff8b426b58ec0e2a45f0f869d46889d02405 # v6.2.0
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
 
@@ -512,7 +512,7 @@ jobs:
 
     steps:
       - name: Checkout workflow scripts (trusted)
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           path: _trusted_tmp
           sparse-checkout: .github/scripts
@@ -526,7 +526,7 @@ jobs:
       # was force-pushed after validate passed, this checkout still points at
       # the validated tree, so claude-review never sees unvalidated code.
       - name: Checkout
-        uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6.0.3
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           ref: ${{ needs.validate.outputs.reviewed_sha }}
           fetch-depth: 0
@@ -574,7 +574,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Clone external repos at pinned commit
-        uses: UKGovernmentBEIS/inspect_evals/.github/actions/clone-external-repos@5431fd62b718ed6e2c4b9cdeeeb30cc21367cc23
+        uses: UKGovernmentBEIS/inspect_evals/.github/actions/clone-external-repos@a595329b9ca5883f4cc065d5278b471cb2c9089e
         with:
           changed_yamls: ${{ needs.validate.outputs.changed_yamls }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -611,7 +611,7 @@ jobs:
 
       - name: Run Claude Code review
         id: claude-review
-        uses: anthropics/claude-code-action@11ba60486e4aec9ddfeafcf4bb3f00b028ac2c16 # v1.0.142
+        uses: anthropics/claude-code-action@558b1d6cab4085c7753fe402c10bef0fbb92ac7a # v1.0.165
         with:
           use_bedrock: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
