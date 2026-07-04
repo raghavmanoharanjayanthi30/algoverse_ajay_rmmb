@@ -1,5 +1,5 @@
 version = 1
-revision = 3
+revision = 2
 requires-python = ">=3.11"
 resolution-markers = [
     "python_full_version == '3.13.*'",
@@ -2518,7 +2518,7 @@ test-py311-or-lower = [
     { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version < '3.14'" },
 ]
 test-py312-or-higher = [
-    { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version >= '3.12' and python_full_version < '3.14'" },
+    { name = "inspect-evals", extra = ["theagentcompany"], marker = "python_full_version < '3.14'" },
 ]
 
 [package.metadata]
@@ -2674,7 +2674,7 @@ test = [
     { name = "pytest-xdist" },
 ]
 test-py311-or-lower = [{ name = "inspect-evals", extras = ["theagentcompany"] }]
-test-py312-or-higher = [{ name = "inspect-evals", extras = ["theagentcompany"], marker = "python_full_version >= '3.12'" }]
+test-py312-or-higher = [{ name = "inspect-evals", extras = ["theagentcompany"] }]
 
 [[package]]
 name = "inspect-scout"
